@@ -1,0 +1,15 @@
+
+{% extends 'core/index.html' %}
+
+{% block title %}questions{% endblock %}
+{% block content %}
+    <h3 class="test_title">Memory questions</h3>
+    <br>
+    {% for qtn in qtns %}
+    <div class="dates">
+        <h4 class="number">{{ qtn.number }}</h4>
+        <a href=""><div class="test"><h4>{{ qtn.qtn }}</h4></div></a>
+    </div>
+    {% endfor %}
+        <!-- end of date -->
+{% endblock %}

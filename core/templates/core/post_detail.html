@@ -1,0 +1,26 @@
+{% extends 'core/index.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+
+      <article class="media content-section">
+          <div class="media">
+              <img src="{{ object.author.profile.image.url }}" alt="" class="rounded-circle account-img px-3">
+          </div>
+          <div class="media-body">
+              <div class="article-metadata">
+                  <a href="{% url 'user-posts' object.author.username %}" class="mr-2">{{object.author.profile.duty}}</a>
+                  <small class="text-muted">신40{{object.date_posted|date:"(Y) F, d(D)"}}</small>
+              </div>
+              <hr>
+              <h5 class="article-title">{{object.hangul_title}}</h5>
+              <h5 class="article-title">{{object.title}}</h5>
+              <p class="article-content truncate">{{object.content}}</p>
+          </div>
+          <a href="{% url 'daily_missions' %}" class="btn btn-info"><< Back</a>
+      </article>
+        <br><br>
+
+</div>
+{% endblock content %}

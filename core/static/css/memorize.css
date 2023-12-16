@@ -1,0 +1,138 @@
+.qtn_content{
+    display: flex;
+    flex-direction: row;
+}
+.test .test_title, .test .qtn_title{
+    margin-bottom: 0;
+    font-size: 20px;
+    padding: 0;
+}
+
+.qtn_div{
+    margin: 0 auto;
+}
+#star{
+    /* width: 3%;
+    border: 1px solid red; */
+    text-align: center;
+    color: gold;
+    font-size: large;
+}
+.number{
+    width: 4%;
+    margin: 0;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+.btn_show{
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.answers{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    /*border: 1px solid red;*/
+    height: 5%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.answers + .answers {
+    margin-top: .5rem;
+}
+
+.ans_no{
+    text-align: center;
+    /* border: 1px solid green; */
+    border-radius: 50%;
+    background: rgba(0,0,0,.4);
+    color: white;
+    height: 30px;
+    padding-top: 4px;
+    margin-top: 2px;
+    font-size: 1rem;
+    width: 3%;
+}
+.ans_div{
+    margin: 0 auto;
+    padding-left: 1rem;
+    background: rgba(0,0,0,.4);
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: .5rem;
+    color: cyan;
+    width: 80%;
+    /*border: 1px solid green;*/
+}
+
+
+/* .test_title::before{
+    content: "";
+    border:1px solid red;
+} */
+
+.qtn_test{
+
+    border: 1px solid rgba(0,0,0,.3);
+    box-shadow: 3px 3px rgba(0,0,0,.3);
+    padding: 10px;
+        border-radius: 10px;
+        margin: 0 auto;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 70%;
+
+}
+
+@media only screen and(min-width: 601px){
+
+    .qtn{
+        width: 91%;
+    }
+    .qtn_div{
+        width: 90%;
+    }
+    .ans_no{
+        width: 8%;
+    }
+    .answers{
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .ans_div{
+        width: 90%;
+    }
+    .answers{
+        width: 90%;
+    }
+    .btn_show{
+        width: 6%;
+    }
+}
+@media only screen and(max-width: 600px){
+    .qtn_test{
+        width: 50%;
+    }
+    .qtn_content{
+        width: 100%;
+    }
+    .qtn_div{
+        width: 100%;
+    }
+    .ans_no{
+        width: 10%;
+    }
+    .answers{
+        width: 100%;
+    }
+    .answers .ans_div{
+        width: 60%;
+        padding: .2rem;
+        padding-left: .2rem;
+    }
+}

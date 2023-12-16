@@ -1,0 +1,67 @@
+{% extends 'core/index.html' %}
+
+{% block title %}answer{% endblock %}
+
+{% block content %}
+    <h4 class="qtn_test">{{test.title}}</h4>
+    <br>
+    <div class="qtn_div">
+        <div class="qtn_content">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+<!--                <button type="submit">-->
+<!--                    <h3><svg id="star" style="color: black; cursor: pointer; font-size: .3rem;" xlms="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 18 18" onclick="pick()">-->
+<!--                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>-->
+<!--                    </svg></h3>-->
+<!--                </button>-->
+            </form>
+
+            <h4 class="number">{{ qtn.number }}.  </h4>
+            <br>
+            <h4 class="qtn">{{ qtn.qtn }}
+            </h4>
+
+        </div>
+        {% for ans in anss %}
+        <div class="answers">
+            <h4 class="ans_no">{{ ans.number }}</h4>
+            <div class="ans_div">
+                <h4 style="display: none; " class="ans" id="{{ans.id}}">{{ ans.ans }}</h4>
+            </div>
+            <button class="btn_show" id="{{ans.number}}" onclick="show('{{ans.id}}')">show</button>
+        </div>
+        {% endfor %}
+        <div class="d-flex justify-evenly" style="width: 80%; margin: 0 auto; margin-top: 20px;">
+            {% for qtn in qtns %}
+                <a href="{% url 'answers' test.id qtn.id %}"><button
+                        style="padding: 5px 10px 5px 10px; margin-left: 10px; margin-top: 5px;" class="btn_show">{{qtn.number}}</button></a>
+            {% endfor %}
+            <a href="{% url 'tests' %}"><button
+                        style="padding: 5px 10px 5px 10px; margin-left: 10px; margin-top: 5px;" class="btn_show"><< Tests</button></a>
+        </div>
+
+        <!-- button div -->
+    <div class="btns" style="
+        .nav_btn + .nav_btn{
+            margin-left: .5rem;
+        }">
+        {% if prev %}
+            <a href="{% url 'answers' test.id prev %}"><button class="nav_btn">Previous</button></a>
+        {% endif %}
+        {% if nxt %}
+            <a href="{% url 'answers' test.id nxt %}"><button class="nav_btn">Next</button></a>
+        {% endif %}
+
+    </div>
+    <!-- end of button div -->
+    <!-- red button div -->
+    <div class="redbtns">
+        <button class="red_btn">Previous</button>
+        <button class="red_btn">Next</button>
+    </div>
+    <!-- end of red button div -->
+
+    </div>
+
+{% endblock %}

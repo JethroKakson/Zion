@@ -1,0 +1,31 @@
+{% extends 'core/index.html' %}
+
+{% load static %}
+
+{% block title %}studying{% endblock %}
+
+{% block content %}
+    <div class="center">
+        <a href="{% url 'tests' %}" title="Test papers">
+            <div class="link">
+                <img src="{% static 'images/test.avif' %}" alt="">
+            </div>
+        </a>
+<!--        <a href="" title="Notes" >-->
+<!--            <div class="link">-->
+<!--                <img src="{% static 'images/note.avif' %}" alt="">-->
+<!--            </div>-->
+<!--        </a>-->
+<!--        <a href="" title="Bible search">-->
+<!--            <div class="link">-->
+<!--                <img src="{% static 'images/search.avif' %}" alt="">-->
+<!--            </div>-->
+<!--        </a>-->
+<!--        <a href="" title="Online test">-->
+<!--            <div class="link">-->
+<!--                <img src="{% static 'images/online-test.jpg' %}" alt="">-->
+<!--            </div>-->
+<!--        </a>-->
+
+    </div>
+{% endblock %}

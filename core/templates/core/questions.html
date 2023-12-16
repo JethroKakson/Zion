@@ -1,0 +1,15 @@
+
+{% extends 'core/index.html' %}
+
+{% block title %}questions{% endblock %}
+{% block content %}
+    <h4 class="qtn_test">{{test.title}}</h4>
+    <br>
+    {% for qtn in qtns %}
+    <div class="dates">
+        <h4 class="number text-small">{{ qtn.number }}</h4>
+        <a href="{% url 'answers' test.id qtn.id %}"><div class="test" style="color: white;"><h4 class="qtn_title">{{ qtn.qtn }}</h4></div></a>
+    </div>
+    {% endfor %}
+        <!-- end of date -->
+{% endblock %}

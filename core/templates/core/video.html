@@ -1,0 +1,17 @@
+{% extends 'core/index.html' %}
+
+{% block content %}
+<br>
+<div class="container d-flex flex-row" style="justify-content: space-evenly; flex-wrap: wrap;">
+
+    {% for vid in videos %}
+        <div class="col-lg-3 menu-item ml-2 mt-2" style="border-radius: 20px; background: rgba(1,1,1,.4);">
+            <a href="{{vid.video.url}}" class="glightbox"><video src="{{vid.video.url}}" style="height: 156.36px; width: 100%;" class="menu-img img-fluid"></video></a>
+            <p class="caption" style="font-weight: bolder;">
+                {{vid.caption}}
+            </p>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}

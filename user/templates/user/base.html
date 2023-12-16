@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        IZMC
+    </title>
+    <link rel="stylesheet" href="{% static 'b4/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'b4/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sealing.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tests.css' %}">
+    <link rel="stylesheet" href="{% static 'css/memorize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body class="" style="background-image: url('{% static 'images/bg.png' %}');
+            background-color: rgba(0,0,0,.4);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-blend-mode: multiply;
+            color: white;">
+ <header class="site-header">
+     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+          <div class="container-fluid d-flex justify-between">
+              <div class="logo">
+                  <img class="title_img" src="{% static 'images/logo.jpeg' %}" alt="">
+                  <a class="navbar-brand" href="{% url 'home' %}">Let's Seal</a>
+              </div>
+              <div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'register' %}">Signup</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </nav>
+ </header>
+ <br><br><br>
+ <main class="container" role="main" style="background: transparent; color: white;">
+     <div class="row">
+         <div class="col-md-8">
+             {% if messages %}
+                {%for msg in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+             {% endif %}
+             {% block content %}{% endblock content %}
+         </div>
+     </div>
+ </main>
+
+    <script src="{% static 'b5/css/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'b5/css/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

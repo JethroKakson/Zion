@@ -1,0 +1,22 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="content-section">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4" style="font-size: 2rem;">
+                    Video Upload
+                </legend>
+                {{ form.as_p }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-info" type="submit">Upload</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

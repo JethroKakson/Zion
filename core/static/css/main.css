@@ -1,0 +1,11 @@
+.account-img{
+    width: 70px;
+    height: auto;
+}
+.base{
+    background-color: #123456;
+}
+
+a:hover{
+    text-decoration: none;
+}
